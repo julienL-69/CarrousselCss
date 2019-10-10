@@ -1,0 +1,96 @@
+body {
+	background-color:grey;
+	position: relative;
+}
+
+#boite 
+{
+	perspective:800px;
+	perspective-origin:center;
+	width:805px;
+	height:300px;
+	position: absolute;
+	margin-top: 15%;
+	margin-left: 25%;
+	}
+
+div
+{
+	width:700px;
+	height:300px;
+	position:absolute;
+	text-align:center;
+}
+
+
+#devant 
+{
+	background-image:linear-gradient(red,yellow);
+	transform: translate3d(0px, 0px,0px);
+	animation:MasuperanimationBlocDevant 8s infinite ease-in-out ;
+}
+
+
+
+#droite
+{
+	transform: translateX(500px) translateZ(-370px) rotateY(90deg) ;
+	background:url(image.jpg);
+	background-size: cover;
+	animation:MasuperanimationBlocDroite 8s infinite ease-in-out;
+}
+
+#gauche 
+{
+	transform:translateX(-500px) translateZ(-370px) rotateY(90deg) ;
+	background-image:linear-gradient(white,green);
+	animation:MasuperanimationBlocGauche 8s infinite ease-in-out;
+}
+
+#fond
+{
+	transform: translateZ(-700px) rotatey(180deg);
+	background-image:linear-gradient(green,red);
+	animation:MasuperanimationBlocFond 8s infinite ease-in-out;
+}
+
+
+@keyframes MasuperanimationBlocDevant {
+0% {	opacity: 1; transform:translate3d(0px, 0px,0px) rotateY(0deg) ;	}
+25% {  opacity:0.2 ; transform:    translate3d(500px, 0px,-370px) rotateY(90deg) ;} 
+50% { opacity:0.2  ; transform:  translate3d(0px, 0px,-700px) rotateY(180deg) ;}
+75% { opacity:0.2 ; transform: translate3d(-500px, 0px,-370px) rotateY(270deg) ;}
+100% { opacity:1 ;	transform:translate3d(0px, 0px,0px) rotateY(359deg);}
+}
+
+@keyframes MasuperanimationBlocDroite {
+
+0% { transform:    translate3d(500px, 0px,-370px) rotateY(90deg) ;opacity:0.2 ;} 
+25% { transform:  translate3d(0px, 0px,-700px) rotateY(180deg) ;opacity:0.2   ;}
+50% { transform: translate3d(-500px, 0px,-370px) rotateY(270deg) ;opacity:0.2;}
+75% {	transform:translate3d(0px, 0px,0px) rotateY(359deg); opacity:1.0 ;}
+100% {	transform:    translate3d(500px, 0px,-370px) rotateY(450deg) ;opacity:0.2;}
+}
+
+
+@keyframes MasuperanimationBlocFond {
+
+0% { transform: translate3d(0px, 0px,-700px) rotateY(180deg) ;opacity:0.2;}
+25% {	transform:translate3d(-500px, 0px,-370px) rotateY(270deg);opacity:0.2 ;}
+50% {	transform:    translate3d(0px, 0px,0px) rotateY(359deg) ;opacity:1;}
+75% { transform:    translate3d(500px, 0px,-370px) rotateY(450deg) ;opacity:0.2 ;} 
+100% { transform:  translate3d(0px, 0px,-700px) rotateY(520deg) ;opacity:0.2   ;}
+
+
+}
+
+@keyframes MasuperanimationBlocGauche {
+0% {	transform: translate3d(-500px, 0px,-370px) rotateY(-90deg)}
+25% {	transform: translate3d(0px, 0px,0px) rotateY(0deg) ;	opacity:1;}
+50% {	transform: translate3d(500px, 0px,-370px) rotateY(90deg) ;	opacity:0.2;}
+75% {	transform: translate3d(0px, 0px,-700px) rotateY(180deg) ;	opacity:0.2;}
+100% {	transform: translate3d(-500px, 0px,-370px) rotateY(270deg) ;	opacity:0.2;}
+}
+
+
+
